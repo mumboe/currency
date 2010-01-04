@@ -10,7 +10,7 @@ require 'rss/rss' # Time#xmlschema
 class Currency::Parser
 
   SYMBOLS_FOR_PATTERN = Currency::Currency::Factory::UNIQUE_SYMBOLS.collect {|symbol| symbol.split("").collect {|c| c =~ /[a-z]/i ? c : '\\'+c }.join }.join("|")
-  VALID_MONEY_PATTERN = /^(([a-zA-z][a-zA-z][a-zA-z])|(#{SYMBOLS_FOR_PATTERN}))?\s*([\-\+\d,\.]+)\s*(([a-zA-z][a-zA-z][a-zA-z])|(#{SYMBOLS_FOR_PATTERN}))?(\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?Z)?$/
+  VALID_MONEY_PATTERN = /^(([a-zA-z][a-zA-z][a-zA-z])|(#{SYMBOLS_FOR_PATTERN}))?\s*((\d{1,3},?(\d{3},?)*\d{3}(\.\d{0,})?|\d{1,3}(\.\d{0,})?|\.\d{1,}?))\s*(([a-zA-z][a-zA-z][a-zA-z])|(#{SYMBOLS_FOR_PATTERN}))?(\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?Z)?$/
 
   # The default Currency to use if no Currency is specified.
   attr_accessor :currency
@@ -55,11 +55,11 @@ class Currency::Parser
     convert_currency = nil
     md = VALID_MONEY_PATTERN.match(x)
     if md && !@currency
-      symbol = md[3] || md[7]
-      code = md[2] || md[6]
+      symbol = md[3] || md[11]
+      code = md[2] || md[10]
       curr = Currency::Currency.get(code ? code.upcase : nil) || (symbol ? Currency::Currency::Factory.get_currency_from_symbol(symbol) : Currency::Currency.default)
       x = md[4]
-      time = Time.xmlschema(md[8]) if md[8]
+      time = Time.xmlschema(md[12]) if md[12]
       time ||= @time
       time = Time.new if time == :now
       currency = curr

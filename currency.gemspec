@@ -1,8 +1,8 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
   s.name = "currency"
-  s.version = "0.5"
-  s.date = "2009-07-17"
+  s.version = "0.51"
+  s.date = "2010-01-04"
   s.author = "Mike Bradford (modifier: 47primes)"
   s.email = "mbradford@47primes.com"
   s.homepage = "http://rubyforge.org/projects/currency/"
