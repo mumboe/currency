@@ -1,6 +1,6 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
-  s.name = "currency"
+  s.name = "mumboe-currency"
   s.version = "0.5.2"
   s.date = "2010-02-12"
   s.author = "Mike Bradford (modifier: 47primes)"
