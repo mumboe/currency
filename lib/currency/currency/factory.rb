@@ -1,3 +1,4 @@
+# encoding: ISO-8859-1
 # Copyright (C) 2006-2007 Kurt Stephens <ruby-currency(at)umleta.com>
 # See LICENSE.txt for details.
 
