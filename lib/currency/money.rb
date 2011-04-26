@@ -213,7 +213,7 @@ class Currency::Money
     #
     # Right side must be Number.
     def *(x)
-       new_rep(@rep * x)
+      new_rep(@rep * x)
     end
 
     #    Money / Money => Float (ratio)

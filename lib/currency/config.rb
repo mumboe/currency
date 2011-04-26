@@ -61,8 +61,8 @@ class Currency::Config
     result
   end
 
-  
-  @@identity = Proc.new { |x| x } # :nodoc:
+  # using BigDecimal to avoid floating point rounding errors.
+  @@identity = Proc.new { |x| BigDecimal.new(x.to_s) } # :nodoc:
   
   # Returns the current Float conversion filter.
   # Can be used to set rounding or truncation policies when converting

@@ -83,7 +83,7 @@ class Currency::Parser
       whole = md[2]
       part = md[3]
       
-      if part.length != currency.scale
+      if part.length != currency.scale_exp
         currency.scale = 10**part.length if part.length > 1
         
         # Pad decimal places with additional '0'

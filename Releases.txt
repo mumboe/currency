@@ -1,5 +1,10 @@
 = Currency Release History
 
+== Release 0.6: 2011/04/26
+
+* Factory is no longer caching Currency instances to avoid sharing state among Money instances via Currency(avoiding unwanted side-effects)
+* applying BigDecimal to avoid floating point rounding errors
+
 == Release 0.5: 2009/07/17
 
 * added the ability to handle all currency symbols listed on xe.com/symbols.php.

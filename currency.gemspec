@@ -1,10 +1,10 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
   s.name = "mumboe-currency"
-  s.version = "0.5.2"
-  s.date = "2010-02-12"
-  s.author = "Mike Bradford (modifier: 47primes)"
-  s.email = "mbradford@47primes.com"
+  s.version = "0.6"
+  s.date = "2011-04-26"
+  s.author = "John Liu & Eric Stewart"
+  s.email = "johnl@mumboe.com"
   s.homepage = "http://rubyforge.org/projects/currency/"
   s.platform = Gem::Platform::RUBY
   s.summary = "Extends the RubyForge version to handle all currency symbols listed on xe.com/symbols.php."

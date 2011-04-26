@@ -9,7 +9,7 @@ class Currency::Currency::Factory
 
     # Returns the default Currency::Factory.
     def self.default
-      @@default ||= self.new
+      @@default = self.new
     end
     # Sets the default Currency::Factory.
     def self.default=(x)
